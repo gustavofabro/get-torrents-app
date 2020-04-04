@@ -16,7 +16,6 @@ export default function App() {
 
   function getTorrents() {
     delegator.extractTorrents(input).then((data) => {
-      console.log('Data final: ' + data)
     })
   }
 

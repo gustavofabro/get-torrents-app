@@ -1,17 +1,13 @@
 import seedExtract from './seed_extract'
-//import magnetExtract from './magnet_extract'
-
-function extractSeeds(data) {
-    return seedExtract.extractSeeds(data)
-}
-
-// function extractMagnet(query) {
-//     return magnetExtract.extractMagnet(query)
-// }
+import magnetExtract from './magnet_extract'
 
 export default {
     extractTorrents(data) {
-        return extractSeeds(data)
-        //.then(extractMagnet)
+        return seedExtract(data)
+        .then((data) => {
+            return magnetExtract(data)
+        }).catch((err) => {
+            debugger
+        })
     }
 }

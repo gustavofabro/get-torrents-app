@@ -22,13 +22,7 @@ function getSeeds(query) {
         })
 
         return urls
-    }).catch(() => {
-        return 'Error fetching data sources. Try again.'
     })
 }
 
-export default {
-    extractSeeds(data) {
-        return getSeeds(data)
-    }
-}
+export default getSeeds
