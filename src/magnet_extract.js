@@ -1,6 +1,5 @@
 import axios from 'axios'
 import cheerio from 'react-native-cheerio'
-import urlParser from 'url'
 import validator from 'validator'
 
 let config = {
@@ -60,7 +59,10 @@ function getMagnetDto(googleMagnetRes) {
 }
 
 function extractTorrentNameFromLink(link) {
-    let name = new urlParser.URL(link).searchParams.get('dn')
+    let dnF = link.substring(link.indexOf('dn=')+3)
+
+    //name = decodeURI(dnF.substring(3, dnF.indexOf('&amp')))
+    name = dnF.substring(3, dnF.indexOf('&'))
 
     return name || link
 }

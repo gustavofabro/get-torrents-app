@@ -1,6 +1,5 @@
 import axios from 'axios'
 import cheerio from 'react-native-cheerio'
-/* import validUrl from 'valid-url' */
 
 const config = {
     headers: {

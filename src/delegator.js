@@ -4,10 +4,10 @@ import magnetExtract from './magnet_extract'
 export default {
     extractTorrents(data) {
         return seedExtract(data)
-        .then((data) => {
-            return magnetExtract(data)
-        }).catch((err) => {
-            debugger
-        })
+            .then((data) => {
+                return magnetExtract(data)
+            }).catch((err) => {
+                // TODO - handler error
+            })
     }
 }
