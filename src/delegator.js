@@ -6,8 +6,6 @@ export default {
         return seedExtract(data)
             .then((data) => {
                 return magnetExtract(data)
-            }).catch((err) => {
-                // TODO - handler error
             })
     }
 }

@@ -4,7 +4,8 @@ import cheerio from 'react-native-cheerio'
 const config = {
     headers: {
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0'
-    }
+    },
+    timeout: 10000
 }
 
 const googleResultSelector = 'div.rc a'
@@ -21,6 +22,8 @@ function getSeeds(query) {
         })
 
         return urls
+    }).catch((err) => {
+        throw new Error('Erro ao extrair as fontes. Tente novamente mais tarde.')
     })
 }
 
